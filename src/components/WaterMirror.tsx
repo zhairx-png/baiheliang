@@ -184,7 +184,7 @@ export default function WaterMirror({ onBack }: WaterMirrorProps) {
           try {
             // Attempt to load the user's custom water sound first. 
             // In the AI Studio editor, upload your sound file to the 'public' folder and rename it to 'water_sound.mp3'.
-            const response = await fetch('/water_sound.mp3');
+            const response = await fetch('./water_sound.mp3');
             if (response.ok) {
               const arrayBuffer = await response.arrayBuffer();
               const audioBuffer = await ctx.decodeAudioData(arrayBuffer);
@@ -431,7 +431,7 @@ export default function WaterMirror({ onBack }: WaterMirrorProps) {
     // Preload custom ripple sound
     const preloadSound = async () => {
       try {
-        const response = await fetch('/water_sound.mp3');
+        const response = await fetch('./water_sound.mp3');
         if (response.ok) {
           const arrayBuffer = await response.arrayBuffer();
           const AudioContextClass = window.AudioContext || (window as any).webkitAudioContext;
